@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP Server Q&A Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                    <h1>MCP Expert Bot</h1>
+                </div>
+                <p class="subtitle">Your intelligent assistant for Model Context Protocol questions</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <h2><i class="fas fa-comments"></i> Chat with MCP Expert</h2>
+                    <button class="clear-chat" onclick="clearChat()">
+                        <i class="fas fa-trash"></i> Clear Chat
+                    </button>
+                </div>
+                
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message bot-message">
+                        <div class="message-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="message-content">
+                            <p>Hello! I'm your MCP (Model Context Protocol) expert assistant. I can help you with:</p>
+                            <ul>
+                                <li>Understanding MCP concepts and architecture</li>
+                                <li>Implementation patterns and best practices</li>
+                                <li>Troubleshooting common issues</li>
+                                <li>Code examples and practical guidance</li>
+                            </ul>
+                            <p>What would you like to know about MCP servers?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input-container">
+                    <div class="input-wrapper">
+                        <input type="text" id="userInput" placeholder="Ask me anything about MCP servers..." onkeypress="handleKeyPress(event)">
+                        <button onclick="sendMessage()" id="sendButton">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="quick-topics">
+                    <h3><i class="fas fa-lightbulb"></i> Quick Topics</h3>
+                    <div class="topic-buttons">
+                        <button class="topic-btn" onclick="askQuestion('What is MCP?')">
+                            What is MCP?
+                        </button>
+                        <button class="topic-btn" onclick="askQuestion('How to implement an MCP server?')">
+                            Implementation Guide
+                        </button>
+                        <button class="topic-btn" onclick="askQuestion('MCP best practices')">
+                            Best Practices
+                        </button>
+                        <button class="topic-btn" onclick="askQuestion('MCP troubleshooting')">
+                            Troubleshooting
+                        </button>
+                        <button class="topic-btn" onclick="askQuestion('MCP vs other protocols')">
+                            Protocol Comparison
+                        </button>
+                        <button class="topic-btn" onclick="askQuestion('MCP security considerations')">
+                            Security
+                        </button>
+                    </div>
+                </div>
+
+                <div class="knowledge-base">
+                    <h3><i class="fas fa-book"></i> Knowledge Base</h3>
+                    <div class="kb-sections">
+                        <div class="kb-section">
+                            <h4>Core Concepts</h4>
+                            <ul>
+                                <li>Protocol Overview</li>
+                                <li>Server Architecture</li>
+                                <li>Client-Server Communication</li>
+                                <li>Message Types</li>
+                            </ul>
+                        </div>
+                        <div class="kb-section">
+                            <h4>Implementation</h4>
+                            <ul>
+                                <li>Setup & Configuration</li>
+                                <li>Handler Functions</li>
+                                <li>Error Handling</li>
+                                <li>Testing Strategies</li>
+                            </ul>
+                        </div>
+                        <div class="kb-section">
+                            <h4>Advanced Topics</h4>
+                            <ul>
+                                <li>Performance Optimization</li>
+                                <li>Scaling Considerations</li>
+                                <li>Integration Patterns</li>
+                                <li>Monitoring & Logging</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="mcp-knowledge.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
